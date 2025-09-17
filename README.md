@@ -11,7 +11,6 @@ This project is a **Custom C++ Standard Template Library (STL)** implementation 
 - **Priority Queue** — heap-based ordering by priority
 
 ## **Key Optimizations**
-- **Circular Array for Vector**: enables near O(1) front/back push/pop.
 - **KMP Substring Search**: O(n + m) pattern matching (faster than naive).
 
 ## **Installation and Setup**
