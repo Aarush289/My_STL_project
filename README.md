@@ -19,7 +19,6 @@ This project is a **Custom C++ Standard Template Library (STL)** implementation 
 
 ### Compile and run the code:
 ```bash
-# --- Quick start (copy & paste) ---
 
 # 1) Clone and enter
 git clone https://github.com/your-username/My-STL-Project.git
