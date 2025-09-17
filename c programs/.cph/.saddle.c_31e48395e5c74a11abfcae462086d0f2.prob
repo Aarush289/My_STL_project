@@ -1,1 +1,0 @@
-{"name":"Local: saddle","url":"c:\\Users\\empire\\Downloads\\c programs\\saddle.c","tests":[{"id":1727281336632,"input":"4\n3\n1\n2\n3\n4\n5\n70\n38\n39\n90\n10\n40\n20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\saddle.c","group":"local","local":true}

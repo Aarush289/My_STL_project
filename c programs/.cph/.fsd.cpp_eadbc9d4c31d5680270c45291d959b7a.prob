@@ -1,1 +1,0 @@
-{"name":"Local: fsd","url":"/home/aarush_/Music/c programs/fsd.cpp","tests":[{"id":1758018767955,"input":"10\nNEW\nPUSH_BACK 3\nPUSH_BACK 2\nPUSH_FRONT 90\nREVERSE 2\nREVERSE 3\nREVERSE 1\nREVERSE 4\nROTATE 1\nROTATE 4\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/aarush_/Music/c programs/fsd.cpp","group":"local","local":true}

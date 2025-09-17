@@ -1,1 +1,0 @@
-{"name":"Local: dpj","url":"c:\\Users\\empire\\Downloads\\c programs\\dpj.cpp","tests":[{"id":1733459539332,"input":"3\n3 2\n1 2 3\n2 3\n1 1\n4 3\n2 8 3 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\dpj.cpp","group":"local","local":true}

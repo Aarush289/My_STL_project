@@ -1,1 +1,0 @@
-{"name":"Local: cfw","url":"c:\\Users\\empire\\Downloads\\c programs\\cfw.cpp","tests":[{"id":1733151073677,"input":"5\n4 1\n1001\n4 1\n1010\n4 1\n0110\n4 2\n0110\n6 3\n001110\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\cfw.cpp","group":"local","local":true}

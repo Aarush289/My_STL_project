@@ -1,1 +1,0 @@
-{"name":"Local: 2045c","url":"c:\\Users\\empire\\Downloads\\c programs\\2045c.cpp","tests":[{"id":1734206323830,"input":"4\n3\n000\n000\n6\n010001\n010111\n5\n10000\n01010\n2\n11\n00\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\2045c.cpp","group":"local","local":true}

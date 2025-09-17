@@ -1,1 +1,0 @@
-{"name":"Local: cp6","url":"c:\\Users\\empire\\Downloads\\c programs\\cp6.c","tests":[{"id":1728195828078,"input":"3\n5\n1 7 8 4 5\n3\n2 6 5\n5\n5 5 5 5 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\cp6.c","group":"local","local":true}

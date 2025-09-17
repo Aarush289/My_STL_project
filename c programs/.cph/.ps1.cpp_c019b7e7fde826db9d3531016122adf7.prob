@@ -1,1 +1,0 @@
-{"name":"Local: ps1","url":"c:\\Users\\empire\\Downloads\\c programs\\ps1.cpp","tests":[{"id":1732885088965,"input":"3\noak yellow\noak yellow\noak yellow\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\ps1.cpp","group":"local","local":true}
