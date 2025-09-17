@@ -1,0 +1,7 @@
+(i)-O(n) since, it is just reverse of insertion which has O(n) time complexity and by logic as well it will have O(n) time complexity as it will  first search that element that has O(n) time complexity and then shift the array after that position that will also have O(n) time complexity so In total time complexity will be O(n) , but if there are multiple elements that need to be removed then time complexity will be approx O(n*2).
+
+
+ii)- O(n+m) insertion of one element takes O(n) time complexity so m elements will have time complexity of m+n since it will first shift a part of vector in O(n) time complexity and then go through the elements that need to be filled in the given order that will take O(m) time complexity hence total is O(m+n) . Although if we use bad algorithm that is we shift the elments by 1 and then insert 1 element and so on ,then time complexity will be O(n*m).
+
+
+iii)O(n*m +nlog(n))-   the answer will vary with the algorithm of sorting and the best time complexity will be O(n*m +nlog(n)) since it will do sum of elements of each vector in O(n*m) time complexity and then sort as per sum in O(nlogn) time complexity so overall time complexity will be O(n*m+nlogn) but if we use weak algorithms for sorting then time complexity can be O(n*m+n*n) . One more thing if we know the range of sum then we can sort in O(n) time complexity so then time complexity will be O(n*m+n).

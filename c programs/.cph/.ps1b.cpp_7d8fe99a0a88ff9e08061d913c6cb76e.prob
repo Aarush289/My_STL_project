@@ -1,0 +1,1 @@
+{"name":"Local: ps1b","url":"c:\\Users\\empire\\Downloads\\c programs\\ps1b.cpp","tests":[{"id":1732886266781,"input":"4\n2\n1 4\n4\n2 8 3 4\n5\n3 8 5 9 7\n6\n2 7 5 3 4 8\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\ps1b.cpp","group":"local","local":true}

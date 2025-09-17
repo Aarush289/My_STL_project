@@ -1,0 +1,1 @@
+{"name":"Local: dpf","url":"c:\\Users\\empire\\Downloads\\c programs\\dpf.cpp","tests":[{"id":1733813908588,"input":"3\n6\n-3 1 4 -1 5 -9\n5\n998244353 998244353 998244353 998244353 998244353\n1\n-2718\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\dpf.cpp","group":"local","local":true}

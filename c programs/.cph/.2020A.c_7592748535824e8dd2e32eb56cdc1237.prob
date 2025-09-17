@@ -1,0 +1,1 @@
+{"name":"Local: 2020A","url":"c:\\Users\\empire\\Downloads\\c programs\\2020A.c","tests":[{"id":1727960352207,"input":"6\n5 2\n3 5\n16 4\n100 3\n6492 10\n10 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\2020A.c","group":"local","local":true}

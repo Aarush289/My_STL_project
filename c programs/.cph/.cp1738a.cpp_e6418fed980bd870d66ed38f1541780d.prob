@@ -1,0 +1,1 @@
+{"name":"Local: cp1738a","url":"c:\\Users\\empire\\Downloads\\c programs\\cp1738a.cpp","tests":[{"id":1730456452859,"input":"4\n1 1\n1\n3 3\n1 2 1\n2 3 2\n1 3 1\n1 6\n5 4 5 4 4 5\n3 4\n1 4 2 2\n1 4 3 5\n6 6 3 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\cp1738a.cpp","group":"local","local":true}

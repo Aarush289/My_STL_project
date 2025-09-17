@@ -1,0 +1,1 @@
+{"name":"Local: sdnc","url":"c:\\Users\\empire\\Downloads\\c programs\\sdnc.py","tests":[{"id":1751388068879,"input":"4\n2\n3\n6\n13\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\sdnc.py","group":"local","local":true}

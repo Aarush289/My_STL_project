@@ -1,0 +1,1 @@
+{"name":"Local: dkc","url":"c:\\Users\\empire\\Downloads\\c programs\\dkc.cpp","tests":[{"id":1748668474045,"input":"10\n1\na\n2\nca\n3\naab\n5\nababa\n6\nacdada\n9\nejibmyyju\n6\nbbccbc\n6\nabacba\n5\nbcbca\n5\ndcbdb\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\dkc.cpp","group":"local","local":true}
