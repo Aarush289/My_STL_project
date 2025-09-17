@@ -1,1 +1,0 @@
-{"name":"Local: htrbj","url":"c:\\Users\\empire\\Downloads\\c programs\\htrbj.cpp","tests":[{"id":1742118399530,"input":"3\n3\n110\n3\n100\n10\n1101001011\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\htrbj.cpp","group":"local","local":true}

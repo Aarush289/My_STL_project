@@ -1,1 +1,0 @@
-{"name":"Local: coni","url":"c:\\Users\\empire\\Downloads\\c programs\\coni.c","tests":[{"id":1727003556993,"input":"6\n1 2 4 7 3 5\n6\n2 1 4\n2 1 3\n1 5 6\n2 3 3\n1 4 20\n2 3 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\coni.c","group":"local","local":true}
