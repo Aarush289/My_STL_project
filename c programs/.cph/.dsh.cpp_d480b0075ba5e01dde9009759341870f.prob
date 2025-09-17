@@ -1,0 +1,1 @@
+{"name":"Local: dsh","url":"c:\\Users\\empire\\Downloads\\c programs\\dsh.cpp","tests":[{"id":1750517054159,"input":"3\n1 1 5\n2 2 2\n90000 80000 70000\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\dsh.cpp","group":"local","local":true}

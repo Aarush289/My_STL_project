@@ -1,0 +1,1 @@
+{"name":"Local: 2004c","url":"c:\\Users\\empire\\Downloads\\c programs\\2004c.c","tests":[{"id":1728988016994,"input":"4\n2 5\n1 10\n3 0\n10 15 12\n4 6\n3 1 2 4\n2 4\n6 9\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\2004c.c","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: fdjkb","url":"c:\\Users\\empire\\Downloads\\c programs\\fdjkb.cpp","tests":[{"id":1749379900938,"input":"8\n4 6 3\n4 5 3\n4 6 2\n10 45 3\n780 23 42\n11 270 23\n1 982800 13\n1 6 2\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\fdjkb.cpp","group":"local","local":true}

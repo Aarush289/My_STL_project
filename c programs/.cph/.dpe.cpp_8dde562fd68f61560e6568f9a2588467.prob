@@ -1,0 +1,1 @@
+{"name":"Local: dpe","url":"c:\\Users\\empire\\Downloads\\c programs\\dpe.cpp","tests":[{"id":1732973543964,"input":"3\n73\n31\n2\n5\n3516\n3982\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\dpe.cpp","group":"local","local":true}

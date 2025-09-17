@@ -1,0 +1,1 @@
+{"name":"Local: cpg3","url":"c:\\Users\\empire\\Downloads\\c programs\\cpg3.cpp","tests":[{"id":1733212580289,"input":"1\n4\n2 5 6 9\n4 1 8 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\empire\\Downloads\\c programs\\cpg3.cpp","group":"local","local":true}
