@@ -1,8 +1,11 @@
-#include "Vector.h"
+#include "../Vector.h"
 
+/*===============================
+*    Iterators( Mutable )
+*===============================*/
 template <typename T>
 vector<T>::Iterator::Iterator(T* data , vector<T>* par){
-    Data = data;
+    Data = data;        
     parent = par;
 }
 
@@ -31,7 +34,7 @@ vector<T>:: Iterator::operator++(){
 template <typename T>
 typename vector<T>::Iterator
 vector<T>:: Iterator::operator++(int){
-    Iterator temp = *this;
+    Iterator temp = *this;      // Copy the iterator (to the current element) before incrementing that
     ++(*this);           
     return temp;
 }
@@ -40,7 +43,7 @@ vector<T>:: Iterator::operator++(int){
 template <typename T>
 typename vector<T>::Iterator&
 vector<T>:: Iterator::operator--(){
-    --Data;              // move one step forward
+    --Data;              // move one step backward
     return *this;
 }
 
@@ -131,7 +134,9 @@ bool vector<T>::Const_Iterator::operator!=(const Const_Iterator& other)const{
     return !(Data == other.Data);
 }
 
-
+/*================================
+ *          Vector(core)
+ *===============================*/
 
 
 template <typename T>
@@ -164,30 +169,33 @@ vector<T>::vector(const vector<T>& other)
 }
 
 template <typename T>
-vector<T>::vector(vector<T>&& other)noexcept
+vector<T>::vector(vector<T>&& other)noexcept        //steal the resources
 {
     capacity = other.capacity;
     length = other.length;
     Data = (other.Data);
-    other.length = 0;   
+    other.length = 0;                               // leave the other in valid , empty state
     other.capacity =0;
     other.Data = nullptr;
 }
 
 template <typename T>
-vector<T>::~vector()
+vector<T>::~vector()                
 {
     if(Data == NULL){return;}
-    delete[] Data;
+    delete[] Data;                                      //frees storage
     length = 0;
     capacity = 0;
 }
 
+/*=================
+*   Assignment
+===================*/
 template <typename T>
 vector<T>& vector<T>::operator=(vector<T>&& other) noexcept {
     if (this != &other) {
-        delete[] Data;
-        Data = other.Data;
+        delete[] Data;              // free the current data
+        Data = other.Data;          //steal the data of other
         length = other.length;
         capacity = other.capacity;
 
@@ -214,6 +222,9 @@ vector<T>& vector<T>::operator=(const vector<T>& other) {
 }
 
 
+/*=========================
+        Element access
+===========================*/
 template <typename T>
 T& vector<T>::operator[](size_t index)
 {
@@ -246,6 +257,51 @@ const T& vector<T>::at(size_t index) const
 }
 
 
+
+template <typename T>
+const T& vector<T>::front() const
+{
+    if (length == 0)
+    {
+        throw std::underflow_error("vector is empty");
+    }
+    return Data[0];
+}
+
+template <typename T>
+const T& vector<T>::back() const
+{
+    if (length == 0)
+    {
+        throw std::underflow_error("vector is empty");
+    }
+    return Data[length - 1];
+}
+
+
+template <typename T>
+T& vector<T>::front()
+{
+    if (length == 0)
+    {
+        throw std::underflow_error("vector is empty");
+    }
+    return Data[0];
+}
+
+template <typename T>
+T& vector<T>::back()
+{
+    if (length == 0)
+    {
+        throw std::underflow_error("vector is empty");
+    }
+    return Data[length - 1];
+}
+
+/*===================
+ *  Size / Capacity 
+===================== */
 template <typename T>
 size_t vector<T> :: size(){
     return length ;
@@ -256,6 +312,28 @@ size_t vector<T>::get_capacity() const {
     return capacity;
 }
 
+
+template <typename T>
+void vector<T>::shrink_to_fit() {
+    if (length < capacity) {
+        T* new_Data = new T[length];
+        for (size_t i = 0; i < length; i++) {
+            new_Data[i] = std::move(Data[i]);
+        }
+        delete[] Data;
+        Data = new_Data;
+        capacity = length;
+    }
+}
+
+template <typename T>
+size_t vector<T> :: size()const {
+    return length ;
+}
+
+/*==========================
+    Relational operators
+============================*/
 template <typename T>
 bool vector<T>::operator==(const vector<T>& other) {
     if (length != other.length) return false;
@@ -326,66 +404,10 @@ bool vector<T>::operator>(const vector<T>& other) {
 }
 
 
-template <typename T>
-void vector<T>::shrink_to_fit() {
-    if (length < capacity) {
-        T* new_Data = new T[length];
-        for (size_t i = 0; i < length; i++) {
-            new_Data[i] = std::move(Data[i]);
-        }
-        delete[] Data;
-        Data = new_Data;
-        capacity = length;
-    }
-}
 
-template <typename T>
-size_t vector<T> :: size()const {
-    return length ;
-}
-
-template <typename T>
-const T& vector<T>::front() const
-{
-    if (length == 0)
-    {
-        throw std::underflow_error("vector is empty");
-    }
-    return Data[0];
-}
-
-template <typename T>
-const T& vector<T>::back() const
-{
-    if (length == 0)
-    {
-        throw std::underflow_error("vector is empty");
-    }
-    return Data[length - 1];
-}
-
-
-template <typename T>
-T& vector<T>::front()
-{
-    if (length == 0)
-    {
-        throw std::underflow_error("vector is empty");
-    }
-    return Data[0];
-}
-
-template <typename T>
-T& vector<T>::back()
-{
-    if (length == 0)
-    {
-        throw std::underflow_error("vector is empty");
-    }
-    return Data[length - 1];
-}
-
-
+/*============================
+    Pointer 
+=============================*/
 
 template <typename T>
 T* vector<T>::data()
@@ -399,6 +421,52 @@ const T* vector<T>::data() const
     return Data;
 }
 
+template <typename T>
+T* vector<T>::begin()
+{
+    return Data;
+}
+
+template <typename T>
+T* vector<T>::end()
+{
+    return Data +length ;
+}
+
+template <typename T>
+const T* vector<T>::begin() const
+{
+    return Data;
+}
+
+template <typename T>
+const T* vector<T>::end() const
+{
+    return Data + length ;
+}
+
+
+
+template <typename T>
+T* vector<T>::left_rotate(size_t k) {
+    if (length == 0) return Data;
+    k = k % length;
+    std::rotate(Data, Data + k, Data + length);
+    return Data;
+}
+
+
+template <typename T>
+T* vector<T>::right_rotate(size_t k) {
+    if (length == 0) return Data;
+    k = k % length;  // Normalize k
+    std::rotate(Data, Data + length - k, Data + length);
+    return Data;
+}
+
+/*===============================
+        Capacity adjustments
+=================================*/
 template <typename T>
 void vector<T>::resize(size_t newsize)
 {   
@@ -440,6 +508,9 @@ void vector<T>::reserve(size_t new_capacity) {
     capacity = new_capacity;
 }
 
+/*==================================================
+    Appending /Inserting/delete the elements
+===================================================*/
 template <typename T>
 void vector<T>::push_back(const T& value)
 {
@@ -470,13 +541,11 @@ void vector<T>::pop_back()
     length--;
 }
 
+
 template <typename T>
 void vector<T>::clear()
 {
-    delete[] Data;
-    capacity = 0;
     length = 0;
-    Data = nullptr;
 }
 // Zero based indexing //
 template <typename T>
@@ -513,29 +582,7 @@ void vector<T>::erase(size_t index)
     length--;
 }
 
-template <typename T>
-T* vector<T>::begin()
-{
-    return Data;
-}
 
-template <typename T>
-T* vector<T>::end()
-{
-    return Data +length ;
-}
-
-template <typename T>
-const T* vector<T>::begin() const
-{
-    return Data;
-}
-
-template <typename T>
-const T* vector<T>::end() const
-{
-    return Data + length ;
-}
 
 template <typename T>
 bool vector<T>::empty()const
@@ -557,22 +604,6 @@ void vector<T>::swap(vector<T>& other)
     other.capacity = tempc;
 }
 
-template <typename T>
-T* vector<T>::left_rotate(size_t k) {
-    if (length == 0) return Data;
-    k = k % length;
-    std::rotate(Data, Data + k, Data + length);
-    return Data;
-}
-
-
-template <typename T>
-T* vector<T>::right_rotate(size_t k) {
-    if (length == 0) return Data;
-    k = k % length;  // Normalize k
-    std::rotate(Data, Data + length - k, Data + length);
-    return Data;
-}
 
 template <typename T>
 vector<T>::vector(std::initializer_list<T> init) {
