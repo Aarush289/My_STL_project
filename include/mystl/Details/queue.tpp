@@ -1,6 +1,9 @@
 #pragma once
-#include "queue.h"
+#include "../queue.h"
 
+/*=============================
+    Ctor/Dtor/Assignment
+===============================*/
 template <typename T>
 queue<T>::queue() : c() {}
 
@@ -32,6 +35,9 @@ queue<T>& queue<T>::operator=(queue<T>&& other) noexcept {
     return *this;
 }
 
+/*===============================
+    Comparison Operators
+================================*/
 template <typename T>
 bool queue<T>::operator==(const queue<T>& other) const {
     return c == other.c;
@@ -52,6 +58,9 @@ bool queue<T>::operator>(const queue<T>& other) const {
     return c > other.c;
 }
 
+/*=================================
+    Append
+================================*/
 template <typename T>
 void queue<T>::push(const T& value) {
     c.push_back(value);
@@ -62,6 +71,9 @@ void queue<T>::push(T&& value) {
     c.push_back(std::move(value));
 }
 
+/*=======================
+    Access
+========================*/
 template <typename T>
 T& queue<T>::front() {
     return c.front();
@@ -82,6 +94,9 @@ const T& queue<T>::back() const {
     return c.back();
 }
 
+/*=====================
+    Element modifiers
+=======================*/
 template <typename T>
 void queue<T>::pop() { 
     c.pop_front();
@@ -97,7 +112,13 @@ void queue<T>::clear() {
     c.clear();
 }
 
-template <typename T>
+
+/*======================
+    Size
+=========================*/
+template <typename T>:
+../tests/../mystl/queue.h:34:56: error: ‘U’ was not declared in this scope [-Wtemplate-body]
+   34 |     void fill_queue(queue<T>& q, std::initializer_list<U> vals);
 bool queue<T>::empty() const {
     return c.empty();
 }

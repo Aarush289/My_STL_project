@@ -1,6 +1,6 @@
-#include "C.h"
+#include "../C.h"
 
-C:: C(size_t n=0):value(n){}
+C:: C(size_t n):value(n){}
 C:: C(const C &other) : value(other.value) {}
 
 C:: C(C &&other) noexcept : value(other.value) { other.value = 0; }

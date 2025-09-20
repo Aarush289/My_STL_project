@@ -1,5 +1,5 @@
 #pragma once
-#include "stack.h"
+#include "../stack.h"
 
 // ----------------- Constructors -----------------
 template <typename T>

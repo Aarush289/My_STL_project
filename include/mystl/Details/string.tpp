@@ -1,7 +1,9 @@
 #pragma once
-#include "string.h"
+#include "../string.h"
 
-
+/*=======================================
+    Constructor/Destructor/Assignment 
+========================================*/
 const size_t string::npos = static_cast<size_t>(-1);
  // Initialize npos to the maximum value of size_t
 string ::string() : str() {
@@ -25,6 +27,9 @@ string::string(const char *other)
     cstr_cache = nullptr; // Initialize cstr_cache to nullptr
 }
 
+/*=============================
+    Size/Length
+===============================*/
 size_t string:: size(){return str.size();}
 
 size_t string:: length(){return str.size();}
@@ -38,6 +43,9 @@ string::string(string &&other) noexcept : str(std::move(other.str)) {
     other.cstr_cache = nullptr; // Set the moved-from object's cache to nullptr
 };
 
+/*=============================
+    Copy/Move operators
+==============================*/
 string &string::operator=(const string &other)
 {
     if (this != &other)
@@ -58,6 +66,9 @@ string& string::operator=(const char *other)
     return *this;
 }
 
+/*=============================
+    Concatination 
+===============================*/
 string& string:: operator+=(const string& other){
     for(size_t i=0;i< other.str.size();i++){
         str.push_back(other.str[i]);
@@ -71,7 +82,10 @@ string string:: operator+(const string& other){
     return result;
 }
 
-const bool string:: operator==(const string& other)const{
+/*==================================================
+    Comparison operators(lexographical order)
+=============================================*/
+bool string:: operator==(const string& other)const{
     if(str.size() != other.str.size()){return false;}
     for(size_t i=0;i< str.size();i++){
         if(str[i]!=other.str[i]){return false;}
@@ -79,11 +93,11 @@ const bool string:: operator==(const string& other)const{
     return true;
 }
 
-const bool string:: operator!=(const string& other)const{
+bool string:: operator!=(const string& other)const{
    return !(*this == other);
 }
 
-const bool string:: operator>(const string& other)const{
+bool string:: operator>(const string& other)const{
     if(*this == other){return false;}
     size_t len;
     if(str.size() < other.str.size()){len= str.size();}
@@ -95,16 +109,16 @@ const bool string:: operator>(const string& other)const{
     return str.size() > other.str.size() ;
 }
 
-const bool string:: operator<(const string& other)const{
+bool string:: operator<(const string& other)const{
     if(*this == other){return false;}
     return !(*this>other) ;
 }
 
-const bool string:: operator<=(const string& other)const{
+bool string:: operator<=(const string& other)const{
     return !(*this>other) ;
 }
 
-const bool string:: operator>=(const string& other)const{
+bool string:: operator>=(const string& other)const{
     return !(*this<other) ;
 }
 
@@ -122,7 +136,9 @@ const char* string::c_str() const {
 
 
 
-
+/*==================================
+    Substring
+====================================*/
 string string:: substr(size_t pos, size_t len)const{
     if(pos + len > str.size()){throw std::overflow_error("substring range out of bounds");}
     string substr;
@@ -237,7 +253,7 @@ size_t string::rfind(const string& pattern) const {
         return last_occurrence;
 }
 
-size_t string:: compare(const string& other) const{
+int string:: compare(const string& other) const{
     if(*this == other){return 0;}
     return (*this > other ? 1 : npos);
 }
@@ -248,6 +264,10 @@ string& string:: append(const string& other){
     }
     return *this;
 }
+
+/*================================
+    Access/Modify elements
+==================================*/
 
 string& string::insert(size_t pos, const string& other){
     if (pos > str.size()) {
@@ -286,7 +306,7 @@ string& string:: erase(size_t pos , size_t len){
     return *this;
 }
 
-const bool string:: starts_with(const string& other)const{
+bool string:: starts_with(const string& other)const{
     if(str.size() < other.str.size()){return false;}
     for(size_t i=0;i<other.str.size();i++){
         if(str[i]!=other.str[i]){return false;}
@@ -294,7 +314,7 @@ const bool string:: starts_with(const string& other)const{
     return true;
 }
 
-const bool string:: ends_with(const string& other)const{
+bool string:: ends_with(const string& other)const{
     if(str.size() < other.str.size()){return false;}
     for(size_t i=0;i<other.str.size();i++){
         if(str[str.size()-1-i]!=other.str[other.str.size()-1-i]){return false;}
@@ -351,10 +371,10 @@ string& string :: to_upper(){
     return *this;
 }
 
+/// Destructor
 string:: ~string(){
     str.clear();
      if (cstr_cache) delete[] cstr_cache;
      cstr_cache = nullptr; // Ensure cache is cleared
 }
-
 

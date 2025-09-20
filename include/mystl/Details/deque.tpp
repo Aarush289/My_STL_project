@@ -1,6 +1,9 @@
 #pragma once
-#include "deque.h"
+#include "../deque.h"
 
+/*==========================
+    Ctor/Dtor/Assignment
+===========================*/
 template <typename T>
 Deque<T>::Deque() : data(nullptr), capacity(0), frontIndex(0), length(0) {}
 
@@ -75,6 +78,10 @@ Deque<T>& Deque<T>::operator=(Deque&& other) noexcept {
     return *this;
 }
 
+/*===============================
+    Comparison operators
+================================*/
+
 template <typename T>
 bool Deque<T>::operator==(const Deque& other) const {
     if(length!= other.length){return false;}
@@ -110,7 +117,9 @@ bool Deque<T>::operator>(const Deque& other) const {
     return !(*this == other || *this < other);
 }
 
-
+/*=================================
+    Capacity increase 
+===================================*/
 template <typename T>
 void Deque<T>::reserve(size_t new_capacity){
     if (new_capacity <= capacity) {
