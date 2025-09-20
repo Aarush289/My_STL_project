@@ -20,18 +20,18 @@ This project is a **Custom C++ Standard Template Library (STL)** implementation 
 ```bash
 
 # 1) Clone and enter
-git clone https://github.com/your-username/My-STL-Project.git
+git clone https://github.com/Aarush289/My-STL-Project.git
 cd My-STL-Project
 
-# 2) Build & run a demo (adjust paths to your entry file, e.g., examples/main.cpp)
+# 2) Build & run a demo 
 # Linux/macOS (Bash/zsh):
 mkdir -p build
-g++ -std=gnu++17 -O2 -Wall -Wextra -Iinclude examples/main.cpp -o build/demo && ./build/demo
+g++ -std=gnu++17 -O2 -Wall -Wextra -Iinclude examples/all_examples.cpp -o build/demo && ./build/demo
 
 # Windows (PowerShell) — if using MinGW:
 # mkdir build
-# g++ -std=c++17 -O2 -Wall -Wextra -Iinclude examples/main.cpp -o build/demo.exe ; ./build/demo.exe
+# g++ -std=c++17 -O2 -Wall -Wextra -Iinclude examples/all_examples.cpp -o build/demo.exe ; ./build/demo.exe
 
 # Windows (MSVC cl.exe, from "Developer Command Prompt for VS"):
 # mkdir build
-# cl /std:c++17 /O2 /I include examples\main.cpp /Fe:build\demo.exe && build\demo.exe
+# cl /std:c++17 /O2 /I include examples\all_examples.cpp /Fe:build\demo.exe && build\demo.exe
