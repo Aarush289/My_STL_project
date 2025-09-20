@@ -1,0 +1,11 @@
+# Build only the examples folder
+cmake -S examples -B examples/build
+cmake --build examples/build
+./examples/build/vector_example
+./examples/build/all_examples
+
+# OR: build from the repo root using the top-level CMakeLists.txt we provide below
+cmake -S . -B build
+cmake --build build
+./build/examples/vector_example
+./build/examples/all_examples
